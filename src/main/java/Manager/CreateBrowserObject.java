@@ -1,4 +1,4 @@
-package DriverManager;
+package Manager;
 
 public class CreateBrowserObject {
     public static DriverManager getManager(DriverType type) {

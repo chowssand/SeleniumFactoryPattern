@@ -1,4 +1,4 @@
-package DriverManager;
+package Manager;
 
 import org.openqa.selenium.WebDriver;
 
@@ -8,17 +8,17 @@ public abstract class DriverManager {
     protected abstract void createDriver();
 
     public void quitDriver() {
-        if (this.driver != null) {
-            this.driver.quit();
-            this.driver = null;
+        if (driver != null) {
+            driver.close();
+            driver = null;
         }
 
     }
 
     public WebDriver getDriver() {
-        if (this.driver == null) {
+        if (driver == null) {
             createDriver();
         }
-        return this.driver;
+        return driver;
     }
 }
