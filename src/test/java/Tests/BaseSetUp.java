@@ -9,11 +9,13 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 
+import java.net.MalformedURLException;
+
 public class BaseSetUp {
     protected WebDriver driver;
     DriverManager dm;
     @BeforeMethod
-    public void setUp(){
+    public void setUp() throws MalformedURLException {
         dm = CreateBrowserObject.getManager(DriverType.CHROME);
         driver = dm.getDriver();
         System.out.println("Instance is "+driver);
